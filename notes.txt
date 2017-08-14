@@ -24,7 +24,16 @@
 - "test suite"
   - a number of test cases executed together by a test runner
 
+- "test fixture"
+  - a piece of code that can construct and configure your test case/suite/run (e.g. setUp())
+  - can clean up following execution of test case/suite/run (e.g. **tearDown())
+  - *generally, memory manager automatically takes care of cleanup in unittests
+  - *is not executed if setUp() throws an exception
+
 - python -m unittest -q test_phonebook.PhoneBookTest.test_lookup_entry_by_name
   - just run one spec
 - python -m unittest -v
   - verbose mode; will give you spec name
+
+- skip a test
+  - `@unittest.skip('WIP')` decorator
