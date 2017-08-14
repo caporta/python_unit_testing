@@ -1,0 +1,30 @@
+- "system under test"
+
+- "test case"
+  - independent
+  - no side effects
+
+- "unit test"
+  - checks the behavior of an _element of code_
+    - a method or function
+    - a module or class
+  - automated
+    - is designed by a human
+    - runs without intervention
+    - reports results unambiguously as "pass" or "fail"
+  - does not use
+    - the file system
+    - a database
+    - the network
+    - external resources
+
+- "test runner"
+  - a program that executes test cases
+
+- "test suite"
+  - a number of test cases executed together by a test runner
+
+- python -m unittest -q test_phonebook.PhoneBookTest.test_lookup_entry_by_name
+  - just run one spec
+- python -m unittest -v
+  - verbose mode; will give you spec name
