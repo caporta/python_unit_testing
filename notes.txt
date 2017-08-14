@@ -37,3 +37,14 @@
 
 - skip a test
   - `@unittest.skip('WIP')` decorator
+
+- DESIGN
+  - Test Case Name
+    - ACT: Set up object to be tested and its collaborators
+    - ARRANGE: Exercise functionality on the object
+    - ASSERT: Make claims about the object and its collaborators
+    - CLEANUP: Release resources, restore to original state
+  - One assertion per test
+    - a test case breaks as soon as it encounters a failed assertion
+    - all subsequent assertions are not run, so no conclusions can be drawn
+    - thus, one assertion per test case is ideal
