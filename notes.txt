@@ -32,6 +32,29 @@
 
 - "regression" - something that used to work no longer does
 
+- "test last"
+  1) write code
+  2) design tests
+  3) **debug & rework
+  - pro: don't invest in test cases until design is stable (can avoid rewrites in best case)
+  - risk: discover testability problems and bugs late in the process
+  - risk: you'll rush or skip designing the tests
+- "test first"
+  1) design code (basic interface)
+  2) design tests
+  3) write code (full implementation)
+  4) refactor tests/refactor code
+  - risk: large amount of rework
+- "test driven"
+  1) write one test
+  2) write code to pass the test
+  3) refactor
+  - pro: iterative and emergent
+
+- "continuous integration"
+  - server that listens for changes in version control
+  - runs test suite and alerts team of failures
+
 - python -m unittest -q test_phonebook.PhoneBookTest.test_lookup_entry_by_name
   - just run one spec
 - python -m unittest -v
