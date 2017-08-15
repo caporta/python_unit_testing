@@ -30,6 +30,8 @@
   - *generally, memory manager automatically takes care of cleanup in unittests
   - *is not executed if setUp() throws an exception
 
+- "regression" - something that used to work no longer does
+
 - python -m unittest -q test_phonebook.PhoneBookTest.test_lookup_entry_by_name
   - just run one spec
 - python -m unittest -v
@@ -48,3 +50,18 @@
     - a test case breaks as soon as it encounters a failed assertion
     - all subsequent assertions are not run, so no conclusions can be drawn
     - thus, one assertion per test case is ideal
+
+- WHY TEST?
+  - Understand what to build
+  - Document the units
+    - "executable specification"
+  - Design the units
+    - decompose the problem into units that are independently testable
+      - loose coupling
+    - design the interface separately from the implementation
+  - Regression protection
+
+- LIMITATIONS ON UNIT TESTING
+  - Can't find all the errors
+  - Won't find integration errors
+  - Not good at testing non functional reqs (e.g. performance & security)
