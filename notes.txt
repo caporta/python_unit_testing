@@ -63,6 +63,8 @@
 - skip a test
   - `@unittest.skip('WIP')` decorator
 
+- pytest (pythonic) > unittest (xunit)
+
 - DESIGN
   - Test Case Name
     - ACT: Set up object to be tested and its collaborators
