@@ -65,6 +65,8 @@
 
 - pytest (pythonic) > unittest (xunit)
 
+- pytest uses dependency injection for test fixture functions
+
 - DESIGN
   - Test Case Name
     - ACT: Set up object to be tested and its collaborators
