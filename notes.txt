@@ -67,6 +67,8 @@
 
 - pytest uses dependency injection for test fixture functions
 
+- unittests should be IN MEMORY, and should not touch the file system
+
 - DESIGN
   - Test Case Name
     - ACT: Set up object to be tested and its collaborators
