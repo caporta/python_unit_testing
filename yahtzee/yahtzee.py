@@ -11,14 +11,15 @@ def small_straight(dice):
     >>> small_straight([1,2,3,4,4])
     0
 
-    function only recognizes sorted lists, and not other forms of collections
+    Function works with lists or sets or other collection types:
 
     >>> small_straight({1,2,3,4,5})
-    0
+    15
     >>> small_straight([5,4,3,2,1])
-    0
+    15
     """
-    if dice == [1, 2, 3, 4, 5]:
+
+    if sorted(dice) == [1, 2, 3, 4, 5]:
         return sum(dice)
     else:
         return 0
