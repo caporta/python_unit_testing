@@ -1,7 +1,7 @@
 import unittest
 
 from .my_service import MyService
-from .fake_single_sign_on_registry import FakeSingleSignOnRegistry
+from .single_sign_on import FakeSingleSignOnRegistry, MockSingleSignOnRegistry, SSOToken
 
 
 class MyServiceTest(unittest.TestCase):
@@ -19,3 +19,19 @@ class MyServiceTest(unittest.TestCase):
 
         response = my_service.handle_request('do stuff', token)
         self.assertIn('hello world', response)
+
+    def test_invalid_token_with_mock(self):
+        token = SSOToken()
+        registry = MockSingleSignOnRegistry(expected_token=token, token_is_valid=False)
+        my_service = MyService(registry)
+
+        my_service.handle_request('do stuff', token=token)
+        self.assertTrue(registry.is_valid_was_called)
+
+    def test_valid_token_with_mock(self):
+        token = SSOToken()
+        registry = MockSingleSignOnRegistry(expected_token=token, token_is_valid=True)
+        my_service = MyService(registry)
+
+        my_service.handle_request('do stuff', token=token)
+        self.assertTrue(registry.is_valid_was_called)

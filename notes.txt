@@ -17,6 +17,7 @@
     - a database
     - the network
     - external resources
+  - a good unit test will ONLY HAVE ONE REASON TO FAIL
 
 - "test runner"
   - a program that executes test cases
@@ -139,7 +140,7 @@
   - Won't find integration errors
   - Not good at testing non functional reqs (e.g. performance & security)
 
-- THREE KINDS OF ASSERT
+- THREE KINDS OF ASSERT (in order of increasing complexity)
   - Check the return value or an exception
   - Check a state change (use a public API)
   - Check a method call (use a mock or spy)
