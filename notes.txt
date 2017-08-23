@@ -54,6 +54,7 @@
   - like a stub, but contains functionality, logic, and implementation that works at some level,
     but still unsuitable for production
   - often used when a stub is not enough (e.g. file i/o, database ops, external webserver ops)
+  - StringIO fakes File library, implementing the same interface (seek(), tell(), readline())
 
 - "test last"
   1) write code
