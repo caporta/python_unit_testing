@@ -50,6 +50,11 @@
   - stubbing libraries (e.g. unittest.Mock) have the advantage of enforcing interfaces
   - fully controlled by test case
 
+- "fake"
+  - like a stub, but contains functionality, logic, and implementation that works at some level,
+    but still unsuitable for production
+  - often used when a stub is not enough (e.g. file i/o, database ops, external webserver ops)
+
 - "test last"
   1) write code
   2) design tests
