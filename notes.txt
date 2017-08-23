@@ -56,6 +56,14 @@
   - often used when a stub is not enough (e.g. file i/o, database ops, external webserver ops)
   - StringIO fakes File library, implementing the same interface (seek(), tell(), readline())
 
+- "mock"
+  - widely misused to mean stub or double
+  - returns hardcoded values & has little of own behavior
+  - make *assertions* about what has happened in a test case
+    - can cause a test to fail, whereas a stub will not
+  - can check a particular method call was made to a particular object with particular arguments
+    and fail the test if the method was not called as specified
+
 - "test last"
   1) write code
   2) design tests
@@ -130,3 +138,8 @@
   - Can't find all the errors
   - Won't find integration errors
   - Not good at testing non functional reqs (e.g. performance & security)
+
+- THREE KINDS OF ASSERT
+  - Check the return value or an exception
+  - Check a state change (use a public API)
+  - Check a method call (use a mock or spy)
