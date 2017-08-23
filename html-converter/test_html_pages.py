@@ -2,7 +2,7 @@ import unittest
 import os
 import tempfile
 
-from .html_pages import HtmlPagesConverter
+from .html_pages import HtmlPagesConverter, FileAccessWrapper
 
 
 class HtmlPagesTest(unittest.TestCase):
@@ -11,6 +11,6 @@ class HtmlPagesTest(unittest.TestCase):
         f = open(filename, 'w', encoding='utf-8')
         f.write('plain text\n')
         f.close()
-        converter = HtmlPagesConverter(filename)
+        converter = HtmlPagesConverter(FileAccessWrapper(filename))
         new_text = converter.get_html_page(0)
         self.assertEqual('plain text<br />', new_text)
