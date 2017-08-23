@@ -1,6 +1,8 @@
 import unittest
+from unittest.mock import Mock
 
 from .alarm import Alarm
+from .sensor import Sensor
 
 
 class AlarmTest(unittest.TestCase):
@@ -20,6 +22,13 @@ class AlarmTest(unittest.TestCase):
 
     def test_normal_pressure_sounds_alarm(self):
         alarm = Alarm(sensor=TestSensor(20))
+        alarm.check()
+        self.assertFalse(alarm.is_alarm_on)
+
+    def test_normal_pressure_with_unittest_mock(self):
+        test_sensor = Mock(Sensor)
+        test_sensor.sample_pressure.return_value = 18
+        alarm = Alarm(test_sensor)
         alarm.check()
         self.assertFalse(alarm.is_alarm_on)
 
