@@ -46,6 +46,7 @@
 
 - "stub"
   - stand-in for a collaborating object that is difficult to use in a test case
+  - simple implementation with nearly no logic or behavior
 
 - "test last"
   1) write code
