@@ -32,6 +32,21 @@
 
 - "regression" - something that used to work no longer does
 
+- "test double"
+  - sometimes referred to as a mock object
+  - like a "stunt double" for films
+  - stands in for an actual object
+  - the class under test doesn't know it isn't talking to the real object
+  - umbrella term for:
+    - test stub
+    - fake object
+    - mock object
+    - test spy
+    - dummy object
+
+- "stub"
+  - stand-in for a collaborating object that is difficult to use in a test case
+
 - "test last"
   1) write code
   2) design tests
