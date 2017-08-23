@@ -69,6 +69,18 @@
 
 - unittests should be IN MEMORY, and should not touch the file system
 
+- doctest -> APPROVAL TESTING
+  - "I'll know it when I see it."
+  - can test documentation by using interpreter formatted expressions in docs
+  - be careful when handling output with changing sort order
+    - dicts
+    - floating points
+    - object ids
+    - dates
+    - times
+  - wildcard -> `...`
+  - exception handling
+
 - DESIGN
   - Test Case Name
     - ACT: Set up object to be tested and its collaborators
