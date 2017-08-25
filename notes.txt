@@ -45,35 +45,45 @@
     - test spy
     - dummy object
 
-- "stub"
-  - stand-in for a collaborating object that is difficult to use in a test case
-  - simple implementation with nearly no logic or behavior
-  - stubbing libraries (e.g. unittest.Mock) have the advantage of enforcing interfaces
-  - fully controlled by test case
+- TYPES OF DOUBLES:
 
-- "fake"
-  - like a stub, but contains functionality, logic, and implementation that works at some level,
-    but still unsuitable for production
-  - often used when a stub is not enough (e.g. file i/o, database ops, external webserver ops)
-  - StringIO fakes File library, implementing the same interface (seek(), tell(), readline())
+  - "stub"
+    - stand-in for a collaborating object that is difficult to use in a test case
+    - simple implementation with nearly no logic or behavior
+    - stubbing libraries (e.g. unittest.Mock) have the advantage of enforcing interfaces
+    - fully controlled by test case
 
-- "mock"
-  - widely misused to mean stub or double
-  - returns hardcoded values & has little of own behavior
-  - make *assertions* about what has happened in a test case
-    - can cause a test to fail, whereas a stub will not
-  - can check a particular method call was made to a particular object with particular arguments
-    and fail the test if the method was not called as specified
+  - "fake"
+    - like a stub, but contains functionality, logic, and implementation that works at some level,
+      but still unsuitable for production
+    - often used when a stub is not enough (e.g. file i/o, database ops, external webserver ops)
+    - StringIO fakes File library, implementing the same interface (seek(), tell(), readline())
 
-- "spy"
-  - a test double that 'listens in' on the connection between the class under test and collaborator
-  - fails test after recording (as opposed to a mock, which fails straight away)
+  - "mock"
+    - widely misused to mean stub or double
+    - returns hardcoded values & has little of own behavior
+    - make *assertions* about what has happened in a test case
+      - can cause a test to fail, whereas a stub will not
+    - can check a particular method call was made to a particular object with particular arguments
+      and fail the test if the method was not called as specified
 
-- "dummy"
-  - usually `None` or empty list used to fill in for a required argument that is not needed
-    for scenario under test
-  - probably a sign that your required argument shouldn't be required, but rather have
-    a default value
+  - "spy"
+    - a test double that 'listens in' on the connection between the class under test and collaborator
+    - fails test after recording (as opposed to a mock, which fails straight away)
+
+  - "dummy"
+    - usually `None` or empty list used to fill in for a required argument that is not needed
+      for scenario under test
+    - probably a sign that your required argument shouldn't be required, but rather have
+      a default value
+
+  - SYNOPSIS:
+    - a _STUB_ returns a hard coded value to any query
+    - a _FAKE_ is a real implementation, yet unsuitable for production
+    - a _MOCK_ is is a stub, and additionally verifies interactions
+    - a _SPY_ lets you query afterwards and find out what happened
+    - a _DUMMY_ is for when the interface requires an arg but your test doesn't
+
 
 - "test last"
   1) write code
