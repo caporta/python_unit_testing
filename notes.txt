@@ -69,6 +69,12 @@
   - a test double that 'listens in' on the connection between the class under test and collaborator
   - fails test after recording (as opposed to a mock, which fails straight away)
 
+- "dummy"
+  - usually `None` or empty list used to fill in for a required argument that is not needed
+    for scenario under test
+  - probably a sign that your required argument shouldn't be required, but rather have
+    a default value
+
 - "test last"
   1) write code
   2) design tests
