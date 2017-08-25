@@ -120,6 +120,9 @@
   - server that listens for changes in version control
   - runs test suite and alerts team of failures
 
+- "parameterized tests"
+  - testing the same function or method with different parameters
+
 - python -m unittest -q test_phonebook.PhoneBookTest.test_lookup_entry_by_name
   - just run one spec
 - python -m unittest -v
