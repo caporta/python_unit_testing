@@ -1,7 +1,8 @@
 import unittest
+from unittest.mock import Mock
 
 from my_service import MyService
-from single_sign_on import FakeSingleSignOnRegistry, MockSingleSignOnRegistry, SpySingleSignOnRegistry, SSOToken
+from single_sign_on import *
 
 
 class MyServiceTest(unittest.TestCase):
@@ -51,3 +52,22 @@ class MyServiceTest(unittest.TestCase):
 
         my_service.handle_request('do stuff', token)
         self.assertIn(token, registry.checked_tokens)
+
+    def test_invalid_token_with_mocking_fw_as_spy(self):
+        token = SSOToken()
+        registry = Mock(SingleSignOnRegistry)
+        registry.is_valid = Mock(return_value=False)
+        my_service = MyService(registry)
+
+        my_service.handle_request('do stuff', token=token)
+        registry.is_valid.assert_called_with(token)
+        
+
+    def test_valid_token_with_mocking_fw_as_spy(self):
+        token = SSOToken()
+        registry = Mock(SingleSignOnRegistry)
+        registry.is_valid = Mock(return_value=True)
+        my_service = MyService(registry)
+        
+        my_service.handle_request('do stuff', token)
+        registry.is_valid.assert_called_with(token)

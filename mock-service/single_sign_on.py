@@ -1,3 +1,6 @@
+class SingleSignOnRegistry:
+    pass
+
 class FakeSingleSignOnRegistry:
     def __init__(self):
         self.tokens = set()
