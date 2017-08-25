@@ -1,8 +1,8 @@
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
-from .alarm import Alarm
-from .sensor import Sensor
+from alarm import Alarm
+from sensor import Sensor
 
 
 class AlarmTest(unittest.TestCase):
@@ -32,6 +32,14 @@ class AlarmTest(unittest.TestCase):
         alarm.check()
         self.assertFalse(alarm.is_alarm_on)
 
+    @patch('alarm.Sensor')
+    def test_high_pressure_with_monkeypatch(self, test_sensor_class):
+            test_sensor_instance = Mock()
+            test_sensor_instance.sample_pressure.return_value = 22
+            test_sensor_class.return_value = test_sensor_instance
+            alarm = Alarm()
+            alarm.check()
+            self.assertTrue(alarm.is_alarm_on)
 
 class TestSensor:
     def __init__(self, pressure):

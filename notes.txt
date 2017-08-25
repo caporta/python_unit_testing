@@ -94,6 +94,9 @@
   - could make tests more complex and harder to read
   - does not prove anything about the behavior of the class under test IN PRODUCTION
 
+- "monkeypatching"
+  - changing code at runtime (metaprogramming)
+
 - "test last"
   1) write code
   2) design tests
