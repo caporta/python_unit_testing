@@ -131,6 +131,9 @@
 - skip a test
   - `@unittest.skip('WIP')` decorator
 
+- measure coverage
+  - `pytest --cov-report term-missing --cov module-name/`
+
 - pytest (pythonic) > unittest (xunit)
 
 - pytest uses dependency injection for test fixture functions
