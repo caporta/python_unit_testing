@@ -134,6 +134,20 @@
 - measure coverage
   - `pytest --cov-report term-missing --cov module-name/`
 
+- interpreting coverage data
+  - find missing test cases
+  - get legacy code under test
+  - continuous intergration - constant measurement
+
+- coverage metric to aim for?
+  - common to shoot for 80% (but it always depends)
+  - test quality != coverage
+    - code review
+    - bug reports
+    - flickering tests
+    - confidence to refactor
+    - & more...
+
 - pytest (pythonic) > unittest (xunit)
 
 - pytest uses dependency injection for test fixture functions
