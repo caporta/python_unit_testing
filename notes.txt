@@ -65,6 +65,10 @@
   - can check a particular method call was made to a particular object with particular arguments
     and fail the test if the method was not called as specified
 
+- "spy"
+  - a test double that 'listens in' on the connection between the class under test and collaborator
+  - fails test after recording (as opposed to a mock, which fails straight away)
+
 - "test last"
   1) write code
   2) design tests

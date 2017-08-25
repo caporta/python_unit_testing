@@ -30,6 +30,16 @@ class MockSingleSignOnRegistry:
             )
 
 
+class SpySingleSignOnRegistry:
+    def __init__(self, accept_all_tokens=True):
+        self.accept_all_tokens = accept_all_tokens
+        self.checked_tokens = []
+
+    def is_valid(self, token):
+        self.checked_tokens.append(token)
+        return self.accept_all_tokens
+
+
 class SSOToken:
     pass
 
