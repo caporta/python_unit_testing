@@ -84,6 +84,15 @@
     - a _SPY_ lets you query afterwards and find out what happened
     - a _DUMMY_ is for when the interface requires an arg but your test doesn't
 
+- Why use doubles?
+  - can help guide design
+    - when you design a mock or spy, you're forced to design the method interface (protocol)
+  - speeds up tests
+  - allows us to isolate and control a particular piece of code
+
+- Why not use test doubles?
+  - could make tests more complex and harder to read
+  - does not prove anything about the behavior of the class under test IN PRODUCTION
 
 - "test last"
   1) write code
